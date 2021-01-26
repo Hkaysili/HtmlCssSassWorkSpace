@@ -1,0 +1,111 @@
+/**  FONT   **/ 
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@500&family=Open+Sans:wght@300&display=swap');
+
+/** VARIABLES **/
+$primary-font: 'Changa', sans-serif;
+$secondary-font:'Open Sans', sans-serif;
+$primary-color: darkred;
+$secondary-color:#14151A;
+$date-color: #FFB320;
+$comment-color: #08ABBD;
+$gray-color: #9F9F9F;
+$light-color: #FEFEFE; 
+$news-new-bcg: #ce2c6c;
+$news-tech-bcg: #4984fc ;
+$news-game-bcg: #344fa1;
+$facebook-bcg: #4b5496;
+$twitter-bcg: #6799ed;
+$youtube-bcg: #d92424;
+$default-fontsize: 10px;
+
+
+/** UTILITIES **/  /*   Çoğunlukla tek bir işlevi olan class'lardır. */ /* HELPER CLASS */
+.bg{
+    &-dark{
+        background-color: $secondary-color;
+    }
+    &-light{
+        background-color: $light-color;
+    }
+}
+.m{
+    &-1{
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+.ml{
+    &-1{
+        margin-left: 1rem;
+    }
+    &-2{  // .ml-2
+        margin-left: 2rem;
+    }
+}
+.upperCase{
+    text-transform: uppercase;
+}
+
+.text-light{
+    color: $light-color;
+}
+.text-primary{
+    color: $primary-color;
+}
+.text-center{
+    text-align: center;
+}
+
+.pt{
+    &-0{padding-top: 0;}
+    &-10{padding-top: 1rem;}
+    &-15{padding-top: 1.5rem;}
+    &-100{padding-top: 10rem;}
+}
+.pb{
+    &-0{padding-bottom: 0;}
+    &-10{padding-top: 1rem;}
+    &-15{padding-bottom: 1.5rem;}
+    &-100{padding-bottom: 10rem;}
+} 
+
+/** MIXINS **/ 
+@mixin flex-display($display, $align-items, $justify-content) {
+    display: $display; //  flex -  yanyana getirelim..
+    align-items: $align-items; // center -  dikey hizalama
+    justify-content: $justify-content; // space-between - eşit aralık boşluk bırak - her 3 içerik birbirine eş uzaklıkta
+}
+
+@mixin  transition($area, $second) { 
+    transition: $area  $second;
+}
+
+@mixin badgeBoxShadow($refColor){ 
+    box-shadow: 8px 8px 8px 2px darken($refColor, $amount: 62%);
+}
+
+@mixin ratingBoxShadow($refColor){ 
+    box-shadow: 5px 4px 14px 0px darken($refColor, $amount: 62%);
+}
+
+
+
+/* RESPONSIVE MIX-IN */
+@mixin media($screensize) { 
+    /* large<1280px */
+    @if($screensize == xlarge){
+        @media(max-width: 1280px){ @content} ;
+    }
+    /* large<992px */
+    @if($screensize == large){
+        @media(max-width: 992px){ @content} ;
+    }
+    /* medium<768px */
+    @if($screensize == medium){
+        @media(max-width: 768px){ @content} ;
+    }
+    /* small<576px */
+    @if($screensize == small){
+        @media(max-width: 576px){ @content} ;
+    }
+}

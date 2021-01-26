@@ -1,0 +1,28 @@
+@keyframes mainAnimate{
+    0% { 
+        opacity: 0;
+        transform: translateY(5rem);
+        border: 0px 0px 0px 0px  solid $primary-color;
+    }
+
+    25% { 
+        opacity: 0.25;
+        border: 1px 0px 1px 0px solid $primary-color;
+    }
+
+    50% {
+        transform:  translateY(-5rem); 
+        opacity: 0.5;
+    }
+
+    
+    75% { 
+        opacity: 0.75;
+    }
+
+    100% {
+        opacity: 1;
+        transform:  translateY(0rem);
+        border: 2px 0px 2px 0px solid $primary-color;
+    }
+}
